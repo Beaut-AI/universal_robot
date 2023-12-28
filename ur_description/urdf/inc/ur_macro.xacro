@@ -148,9 +148,9 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
+        <origin xyz="-0.18 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
-          <mesh filename="${forearm_collision_mesh}"/>
+          <cylinder length="0.5" radius="0.085"/>
         </geometry>
       </collision>
       <xacro:cylinder_inertial radius="${forearm_inertia_radius}" length="${forearm_inertia_length}"  mass="${forearm_mass}">
@@ -324,13 +324,128 @@
       <origin xyz="0 0 0" rpy="0 ${-pi/2.0} ${-pi/2.0}" />
     </joint>
 
-    <!-- ROS-Industrial 'tool0' frame: all-zeros tool frame -->
-    <link name="${prefix}tool0"/>
+    <!-- Start: This setup are meant for 'air-brush' experiments -->
+    <link name="${prefix}tool0">
+      <visual>
+        <origin xyz="-0.02 -0.05 -0.115" rpy="0 0 0" />
+        <geometry>
+          <box size="0.17 0.18 0.23" />
+        </geometry>
+        <material name="green">
+          <color rgba="0 1 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="-0.02 -0.05 -0.115" rpy="0 0 0" />
+        <geometry>
+          <box size="0.17 0.18 0.23" />
+        </geometry>
+      </collision>
+    </link>
     <joint name="${prefix}flange-tool0" type="fixed">
-      <!-- default toolframe: X+ left, Y+ up, Z+ front -->
-      <origin xyz="0 0 0" rpy="${pi/2.0} 0 ${pi/2.0}"/>
+      <origin xyz="0.23 0 -0.095" rpy="-${pi/2.0} 0 -${pi/2.0}"/>
       <parent link="${prefix}flange"/>
       <child link="${prefix}tool0"/>
     </joint>
+    <!-- End: This setup meant for 'air-brush' experiments -->
+
+    <!-- Start: This setup meant for 'lazer' experiments -->
+    <!-- <link name="${prefix}tool0">
+      <visual>
+        <origin xyz="-0.025 -0.04 -0.086" rpy="0 0 0" />
+        <geometry>
+          <box size="0.13 0.16 0.172" />
+        </geometry>
+        <material name="green">
+          <color rgba="0 1 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="-0.025 -0.04 -0.086" rpy="0 0 0" />
+        <geometry>
+          <box size="0.13 0.16 0.172" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${prefix}flange-tool0" type="fixed">
+      <origin xyz="0.172 0 -0.055" rpy="-${pi/2.0} 0 -${pi/2.0}"/>
+      <parent link="${prefix}flange"/>
+      <child link="${prefix}tool0"/>
+    </joint> -->
+    <!-- End: This setup meant for 'lazer' experiments -->
+
+    <!-- Start: This setup meant for 'aruco' experiments -->
+    <!-- <link name="${prefix}tool0">
+      <visual>
+        <origin xyz="0 0 -0.015" rpy="0 0 0" />
+        <geometry>
+          <box size="0.2 0.2 0.03" />
+        </geometry>
+        <material name="green">
+          <color rgba="0 1 0 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.015" rpy="0 0 0" />
+        <geometry>
+          <box size="0.2 0.2 0.03" />
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${prefix}flange-tool0" type="fixed">
+      <origin xyz="0.014 0 0" rpy="${pi/2.0} 0 ${pi/2.0}"/>
+      <parent link="${prefix}flange"/>
+      <child link="${prefix}tool0"/>
+    </joint> -->
+    <!-- End: This setup meant for 'aruco' experiments -->
+
+    <link name="${prefix}table">
+      <visual>
+        <origin xyz="0 0 0.4" rpy="0 0 0" />
+        <geometry>
+          <box size="0.14 0.5 0.8" />
+        </geometry>
+        <material name="white">
+          <color rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.4" rpy="0 0 0" />
+        <geometry>
+         <box size="0.14 0.5 0.8" />
+        </geometry>
+      </collision>
+    </link>
+    
+    <joint name="${prefix}table-base_link" type="fixed">
+      <origin xyz="0 0 0.8" rpy="0 0 0"/>
+      <parent link="${prefix}table"/>
+      <child link="${prefix}base_link"/>
+    </joint>
+
+    <link name="${prefix}camera_stand">
+      <visual>
+        <origin xyz="0 -0.16 0.045" rpy="0 0 0" />
+        <geometry>
+          <box size="0.25 0.16 0.09" />
+        </geometry>
+        <material name="blue">
+          <color rgba="0 0 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 -0.16 0.045" rpy="0 0 0" />
+        <geometry>
+         <box size="0.25 0.16 0.09" />
+        </geometry>
+      </collision>
+    </link>
+    
+    <joint name="${prefix}base_link-camera_stand" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}camera_stand"/>
+    </joint>
+
   </xacro:macro>
 </robot>
