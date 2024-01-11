@@ -327,7 +327,7 @@
     <!-- Start: This setup are meant for 'air-brush' experiments -->
     <link name="${prefix}tool0">
       <visual>
-        <origin xyz="0 -0.059 -0.1652" rpy="0 0 0" />
+        <origin xyz="0 -0.059 -0.1033" rpy="0 0 0" />
         <geometry>
           <mesh filename="package://gemmapp_ros/config/end_effector.stl"/>
         </geometry>
@@ -336,14 +336,14 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="-0.02 -0.03 -0.0825" rpy="0 0 0" />
+        <origin xyz="-0.02 -0.03 -0.076" rpy="0 0 0" />
         <geometry>
-          <box size="0.12 0.14 0.1652" />
+          <box size="0.12 0.14 0.14" />
         </geometry>
       </collision>
     </link>
     <joint name="${prefix}flange-tool0" type="fixed">
-      <origin xyz="0.1652 0 -0.059" rpy="-${pi/2.0} 0 -${pi/2.0}"/>
+      <origin xyz="0.1033 0 -0.059" rpy="-${pi/2.0} 0 -${pi/2.0}"/>
       <parent link="${prefix}flange"/>
       <child link="${prefix}tool0"/>
     </joint>
