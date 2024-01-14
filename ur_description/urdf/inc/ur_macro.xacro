@@ -324,10 +324,10 @@
       <origin xyz="0 0 0" rpy="0 ${-pi/2.0} ${-pi/2.0}" />
     </joint>
 
-    <!-- Start: This setup are meant for 'air-brush' experiments -->
-    <link name="${prefix}tool0">
+
+    <link name="${prefix}tool_temp">
       <visual>
-        <origin xyz="0 -0.059 -0.1033" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <mesh filename="package://gemmapp_ros/config/end_effector.stl"/>
         </geometry>
@@ -336,15 +336,28 @@
         </material>
       </visual>
       <collision>
-        <origin xyz="-0.02 -0.03 -0.076" rpy="0 0 0" />
+        <origin xyz="-0.02 0.03 0.025" rpy="0 0 0" />
         <geometry>
           <box size="0.12 0.14 0.14" />
         </geometry>
       </collision>
     </link>
-    <joint name="${prefix}flange-tool0" type="fixed">
-      <origin xyz="0.1033 0 -0.059" rpy="-${pi/2.0} 0 -${pi/2.0}"/>
+    <joint name="${prefix}flange-tool_temp" type="fixed">
+      <origin xyz="0 0 0" rpy="-${pi/2.0} 0 -${pi/2.0}"/>
       <parent link="${prefix}flange"/>
+      <child link="${prefix}tool_temp"/>
+    </joint>
+
+    <xacro:property name="x_angle" value="0.0499584"/>
+    <xacro:property name="y_angle" value="0"/>
+    <xacro:property name="y_shift" value="0.059"/>
+    <xacro:property name="z_shift" value="0.1033"/>
+
+    <!-- Start: This setup are meant for 'air-brush' experiments -->
+    <link name="${prefix}tool0" />
+    <joint name="${prefix}tool_temp-tool0" type="fixed">
+      <origin xyz="0 ${y_shift} ${z_shift}" rpy="${y_angle} ${x_angle} 0"/>
+      <parent link="${prefix}tool_temp"/>
       <child link="${prefix}tool0"/>
     </joint>
     <!-- End: This setup meant for 'air-brush' experiments -->
