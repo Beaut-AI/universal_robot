@@ -329,7 +329,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/config/end_effector.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/end_effector.stl"/>
         </geometry>
         <material name="air_brush_color">
           <color rgba="1 ${186.0/255.0} ${172.0/255.0} 1" />
@@ -417,7 +417,7 @@
       <visual>
         <origin xyz="0 0 ${table_height}" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/config/round_table.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/round_table.stl"/>
         </geometry>
         <material name="table_color">
           <color rgba="${200.0/255.0} ${200.0/255.0} ${200.0/255.0} 1" />
@@ -440,7 +440,7 @@
       <visual>
         <origin xyz="0 -0.22 0.045" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/config/static_camera_D415.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/static_camera_D415.stl"/>
         </geometry>
         <material name="blue">
           <color rgba="0 0 1 1" />
