@@ -420,7 +420,7 @@
           <mesh filename="package://gemmapp_ros/config/round_table.stl"/>
         </geometry>
         <material name="table_color">
-          <color rgba="1 ${186.0/255.0} ${172.0/255.0} 1" />
+          <color rgba="${200.0/255.0} ${200.0/255.0} ${200.0/255.0} 1" />
         </material>
       </visual>
       <collision>
