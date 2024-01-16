@@ -375,11 +375,11 @@
       <child link="${prefix}tool_temp"/>
     </joint>
 
-    <xacro:property name="calibration_x_angle" value="0.0499584"/>
+    <xacro:property name="calibration_x_angle" value="0"/>
     <xacro:property name="calibration_y_angle" value="0"/>
     <xacro:property name="x_shift" value="0.0"/>
-    <xacro:property name="y_shift" value="0.059"/>
-    <xacro:property name="z_shift" value="0.1033"/>
+    <xacro:property name="y_shift" value="0.078"/>
+    <xacro:property name="z_shift" value="0.1224"/>
 
     <!-- Start: This setup are meant for 'air-brush' experiments -->
     <link name="${prefix}tool0" />
