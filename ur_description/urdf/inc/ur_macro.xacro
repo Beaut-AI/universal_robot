@@ -423,16 +423,15 @@
     <!-- End: This setup meant for 'aruco' experiments -->
 
     <xacro:property name="table_height" value="0.8"/>
-    <xacro:property name="cms_angle_degrees" value="35"/>
-    <xacro:property name="cms_angle_rad" value="${cms_angle_degrees * pi / 180.0}"/>
-    <xacro:property name="cms_angle_rad_flip" value="${pi - cms_angle_rad}"/>
-    <xacro:property name="cms_radius" value="${0.85 + 0.5}"/>
-    <xacro:property name="cms_x" value="${-cms_radius * sin(cms_angle_rad)}"/>
-    <xacro:property name="cms_y" value="${-cms_radius * cos(cms_angle_rad)}"/>
+    <xacro:property name="cms_angle_degrees" value="50"/>
+    <xacro:property name="cms_flipped_angle_rad" value="${(180.0 - cms_angle_degrees) * pi / 180.0}"/>
+    <xacro:property name="cms_x" value="-0.712"/>
+    <xacro:property name="cms_y" value="-0.598"/>
+    <xacro:property name="cms_z" value="${0.275 + table_height}"/>
     
     <link name="${prefix}table">
       <visual>
-        <origin xyz="${cms_x} ${cms_y} 0" rpy="0 0 ${cms_angle_rad_flip}" />
+        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
         <geometry>
           <mesh filename="package://gemmapp_ros/meshes/cms/arm.stl"/>
         </geometry>
@@ -441,7 +440,7 @@
         </material>
       </visual>
       <visual>
-        <origin xyz="${cms_x} ${cms_y} 0" rpy="0 0 ${cms_angle_rad_flip}" />
+        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
         <geometry>
           <mesh filename="package://gemmapp_ros/meshes/cms/base.stl"/>
         </geometry>
@@ -450,7 +449,7 @@
         </material>
       </visual>
       <visual>
-        <origin xyz="${cms_x} ${cms_y} 0" rpy="0 0 ${cms_angle_rad_flip}" />
+        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
         <geometry>
           <mesh filename="package://gemmapp_ros/meshes/cms/cms1.stl"/>
         </geometry>
@@ -459,7 +458,7 @@
         </material>
       </visual>
       <visual>
-        <origin xyz="${cms_x} ${cms_y} 0" rpy="0 0 ${cms_angle_rad_flip}" />
+        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
         <geometry>
           <mesh filename="package://gemmapp_ros/meshes/cms/cms2.stl"/>
         </geometry>
@@ -468,7 +467,7 @@
         </material>
       </visual>
       <visual>
-        <origin xyz="${cms_x} ${cms_y} 0" rpy="0 0 ${cms_angle_rad_flip}" />
+        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
         <geometry>
           <mesh filename="package://gemmapp_ros/meshes/cms/cms3.stl"/>
         </geometry>
@@ -476,6 +475,24 @@
           <color rgba="${100/255.0} ${100/255.0} ${100/255.0} 1" />
         </material>
       </visual>
+      <collision>
+        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
+        <geometry>
+          <mesh filename="package://gemmapp_ros/meshes/cms/collision_up.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
+        <geometry>
+          <mesh filename="package://gemmapp_ros/meshes/cms/collision_down.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
+        <geometry>
+          <mesh filename="package://gemmapp_ros/meshes/cms/arm.stl"/>
+        </geometry>
+      </collision>
 
       <visual>
         <origin xyz="0 0 ${table_height}" rpy="0 0 0" />
@@ -503,10 +520,19 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/static_camera_D415.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/static_camera/D415.stl"/>
         </geometry>
-        <material name="blue">
-          <color rgba="0 0 1 1" />
+        <material name="static_camera_D415">
+          <color rgba="${70/255.0} ${70/255.0} ${200.0/255.0} 1" />
+        </material>
+      </visual>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://gemmapp_ros/meshes/static_camera/arm.stl"/>
+        </geometry>
+        <material name="static_camera_arm">
+          <color rgba="${80.0/255.0} ${80.0/255.0} ${80.0/255.0} 1" />
         </material>
       </visual>
       <collision>
