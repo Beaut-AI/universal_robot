@@ -336,7 +336,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/eclipse_endeffector_airbrush.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_airbrush.stl"/>
         </geometry>
         <material name="eclipse_endeffector_airbrush">
           <color rgba="1 ${186.0/255.0} ${172.0/255.0} 1" />
@@ -345,7 +345,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/eclipse_endeffector_camera.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_camera.stl"/>
         </geometry>
         <material name="eclipse_endeffector_camera">
           <color rgba="${20.0/255.0} ${20.0/255.0} ${240.0/255.0} 1" />
@@ -354,7 +354,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/eclipse_endeffector_gripper.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_gripper.stl"/>
         </geometry>
         <material name="eclipse_endeffector_gripper">
           <color rgba="${100.0/255.0} ${100.0/255.0} ${100.0/255.0} 1" />
@@ -363,7 +363,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/eclipse_endeffector_servo.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_servo.stl"/>
         </geometry>
         <material name="eclipse_endeffector_servo">
           <color rgba="${240.0/255.0} ${20.0/255.0} ${20.0/255.0} 1" />
@@ -372,7 +372,13 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/eclipse_endeffector_collision.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_collision1.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_collision2.stl"/>
         </geometry>
       </collision>
     </link>
