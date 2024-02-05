@@ -543,39 +543,5 @@
       <parent link="${prefix}table"/>
       <child link="${prefix}base_link"/>
     </joint>
-
-    <link name="${prefix}camera_stand">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/static_camera/D415.stl"/>
-        </geometry>
-        <material name="static_camera_D415">
-          <color rgba="${70/255.0} ${70/255.0} ${200.0/255.0} 1" />
-        </material>
-      </visual>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/static_camera/arm.stl"/>
-        </geometry>
-        <material name="static_camera_arm">
-          <color rgba="${80.0/255.0} ${80.0/255.0} ${80.0/255.0} 1" />
-        </material>
-      </visual>
-      <collision>
-        <origin xyz="-0.02 0 0" rpy="0 0 0" />
-        <geometry>
-         <box size="0.12 0.04 0.04" />
-        </geometry>
-      </collision>
-    </link>
-
-    <joint name="${prefix}base_link-camera_stand" type="fixed">
-      <origin xyz="0.03714007037884025 -0.11853391014676645 0.06885225109582538" rpy="0 0 0"/>
-      <parent link="${prefix}base_link"/>
-      <child link="${prefix}camera_stand"/>
-    </joint>
-
   </xacro:macro>
 </robot>
