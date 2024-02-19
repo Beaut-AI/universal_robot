@@ -388,6 +388,13 @@
       <child link="${prefix}tool_temp"/>
     </joint>
 
+    <link name="${prefix}camera_ee" />
+    <joint name="${prefix}tool_temp-camera_ee" type="fixed">
+      <origin xyz="0 0 0.04" rpy="0 0 0"/>
+      <parent link="${prefix}tool_temp"/>
+      <child link="${prefix}camera_ee"/>
+    </joint>
+
     <xacro:property name="calibration_x_angle" value="0"/>
     <xacro:property name="calibration_y_angle" value="0"/>
     <xacro:property name="x_shift" value="0.0"/>
