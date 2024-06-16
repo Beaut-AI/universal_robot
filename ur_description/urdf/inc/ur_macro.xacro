@@ -336,13 +336,13 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_airbrush.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/temptu_airpod_airbrush.stl"/>
         </geometry>
-        <material name="eclipse_endeffector_airbrush">
+        <material name="temptu_airpod_airbrush">
           <color rgba="1 ${186.0/255.0} ${172.0/255.0} 1" />
         </material>
       </visual>
-      <visual>
+      <!-- <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_camera.stl"/>
@@ -350,17 +350,17 @@
         <material name="eclipse_endeffector_camera">
           <color rgba="${20.0/255.0} ${20.0/255.0} ${240.0/255.0} 1" />
         </material>
-      </visual>
+      </visual> -->
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_gripper.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/temptu_airpod_gripper.stl"/>
         </geometry>
-        <material name="eclipse_endeffector_gripper">
+        <material name="temptu_airpod_gripper">
           <color rgba="${100.0/255.0} ${100.0/255.0} ${100.0/255.0} 1" />
         </material>
       </visual>
-      <visual>
+      <!-- <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_servo.stl"/>
@@ -368,17 +368,17 @@
         <material name="eclipse_endeffector_servo">
           <color rgba="${240.0/255.0} ${20.0/255.0} ${20.0/255.0} 1" />
         </material>
-      </visual>
-      <collision>
+      </visual> -->
+      <!-- <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_collision1.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_camera.stl"/>
         </geometry>
-      </collision>
+      </collision> -->
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_collision2.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/temptu_airpod_collision.stl"/>
         </geometry>
       </collision>
     </link>
@@ -398,8 +398,8 @@
     <xacro:property name="calibration_x_angle" value="0"/>
     <xacro:property name="calibration_y_angle" value="0"/>
     <xacro:property name="x_shift" value="0.0"/>
-    <xacro:property name="y_shift" value="0.078"/>
-    <xacro:property name="z_shift" value="0.1224"/>
+    <xacro:property name="y_shift" value="0.0854"/>
+    <xacro:property name="z_shift" value="0.14778"/>
 
     <!-- Start: This setup are meant for 'air-brush' experiments -->
     <link name="${prefix}tool0" />
