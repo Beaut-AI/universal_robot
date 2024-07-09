@@ -342,6 +342,15 @@
           <color rgba="1 ${186.0/255.0} ${172.0/255.0} 1" />
         </material>
       </visual>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://gemmapp_ros/meshes/ee/temptu_airpod_camera.stl"/>
+        </geometry>
+        <material name="temptu_airpod_camera">
+          <color rgba="${20.0/255.0} ${20.0/255.0} ${240.0/255.0} 1" />
+        </material>
+      </visual>
       <!-- <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -398,7 +407,7 @@
     <xacro:property name="calibration_x_angle" value="0"/>
     <xacro:property name="calibration_y_angle" value="0"/>
     <xacro:property name="x_shift" value="0.0"/>
-    <xacro:property name="y_shift" value="0.0854"/>
+    <xacro:property name="y_shift" value="0.0"/>
     <xacro:property name="z_shift" value="0.14778"/>
 
     <!-- Start: This setup are meant for 'air-brush' experiments -->
