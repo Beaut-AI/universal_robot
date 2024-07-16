@@ -399,7 +399,7 @@
 
     <link name="${prefix}camera_ee" />
     <joint name="${prefix}tool_temp-camera_ee" type="fixed">
-      <origin xyz="0 0 0.04" rpy="0 0 0"/>
+      <origin xyz="0 -0.038 0.139" rpy="0 0 0"/>
       <parent link="${prefix}tool_temp"/>
       <child link="${prefix}camera_ee"/>
     </joint>
