@@ -517,13 +517,13 @@
         <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/data/eliane_aligned_subdivision.dae"/>
+          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/face_database/eliane/eliane_aligned_subdivision.dae"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/data/eliane_aligned_collision.dae"/>
+          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/face_database/eliane/eliane_aligned_collision.dae"/>
         </geometry>
       </collision>
       <inertial>
