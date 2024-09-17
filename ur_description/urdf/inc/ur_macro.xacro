@@ -351,15 +351,6 @@
           <color rgba="${20.0/255.0} ${20.0/255.0} ${240.0/255.0} 1" />
         </material>
       </visual>
-      <!-- <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_camera.stl"/>
-        </geometry>
-        <material name="eclipse_endeffector_camera">
-          <color rgba="${20.0/255.0} ${20.0/255.0} ${240.0/255.0} 1" />
-        </material>
-      </visual> -->
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -369,21 +360,6 @@
           <color rgba="${100.0/255.0} ${100.0/255.0} ${100.0/255.0} 1" />
         </material>
       </visual>
-      <!-- <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_servo.stl"/>
-        </geometry>
-        <material name="eclipse_endeffector_servo">
-          <color rgba="${240.0/255.0} ${20.0/255.0} ${20.0/255.0} 1" />
-        </material>
-      </visual> -->
-      <!-- <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/eclipse_endeffector_camera.stl"/>
-        </geometry>
-      </collision> -->
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -456,24 +432,6 @@
     <xacro:property name="woman_z" value="${0.45 + table_height}"/>
     
     <link name="${prefix}table">
-      <!-- <visual>
-        <origin xyz="${woman_x} ${woman_y} ${woman_z}" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/human/chair.stl"/>
-        </geometry>
-        <material name="cms_arm">
-          <color rgba="${200.0/255.0} ${200.0/255.0} ${200.0/255.0} 1" />
-        </material>
-      </visual>
-      <visual>
-        <origin xyz="${woman_x} ${woman_y} ${woman_z}" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/human/woman.stl"/>
-        </geometry>
-        <material name="cms_arm">
-          <color rgba="${200.0/255.0} ${200.0/255.0} ${200.0/255.0} 1" />
-        </material>
-      </visual> -->
       <visual>
         <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
         <geometry>
@@ -554,6 +512,33 @@
         </geometry>
       </collision>
     </link>
+
+    <link name="face_link">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/data/eliane_aligned_subdivision.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/data/eliane_aligned_collision.dae"/>
+        </geometry>
+      </collision>
+      <inertial>
+            <origin rpy="0 0 0" xyz="0.043 0.001 0.002" />
+            <mass value="0.1" />
+            <inertia ixx="0.000348958333333" ixy="0" ixz="0" iyy="0.000348958333333" iyz="0" izz="3.125e-05" />
+        </inertial>
+    </link>
+
+    <joint name="face_joint" type="fixed">
+    <parent link="${prefix}base_link"/>
+    <child link="face_link"/>
+    <origin rpy="${pi / 2} 0 ${pi}" xyz="0 -0.55 0.45"/>
+    </joint>
+
     <joint name="${prefix}table-base_link" type="fixed">
       <origin xyz="0 0 ${table_height}" rpy="0 0 0"/>
       <parent link="${prefix}table"/>
