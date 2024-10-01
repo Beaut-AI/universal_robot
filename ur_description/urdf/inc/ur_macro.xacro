@@ -360,12 +360,12 @@
           <color rgba="${100.0/255.0} ${100.0/255.0} ${100.0/255.0} 1" />
         </material>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <mesh filename="package://gemmapp_ros/meshes/ee/temptu_airpod_collision.stl"/>
         </geometry>
-      </collision>
+      </collision> -->
     </link>
     <joint name="${prefix}flange-tool_temp" type="fixed">
       <origin xyz="0 0 0" rpy="-${pi/2.0} 0 -${pi/2.0}"/>
@@ -420,95 +420,22 @@
     </joint> -->
     <!-- End: This setup meant for 'aruco' experiments -->
 
-    <xacro:property name="table_height" value="0.8"/>
-    <xacro:property name="cms_angle_degrees" value="50"/>
-    <xacro:property name="cms_flipped_angle_rad" value="${(180.0 - cms_angle_degrees) * pi / 180.0}"/>
-    <xacro:property name="cms_x" value="-0.712"/>
-    <xacro:property name="cms_y" value="-0.598"/>
-    <xacro:property name="cms_z" value="${0.275 + table_height}"/>
-
-    <xacro:property name="woman_x" value="0.0"/>
-    <xacro:property name="woman_y" value="-0.6"/>
-    <xacro:property name="woman_z" value="${0.45 + table_height}"/>
+    <xacro:property name="table_height" value="0.77"/>
+    <xacro:property name="face_x" value="0"/>
+    <xacro:property name="face_y" value="-0.55"/>
+    <xacro:property name="face_z" value="0.45"/>
     
     <link name="${prefix}table">
       <visual>
-        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/cms/arm.stl"/>
-        </geometry>
-        <material name="cms_arm">
-          <color rgba="${200.0/255.0} ${200.0/255.0} ${200.0/255.0} 1" />
-        </material>
-      </visual>
-      <visual>
-        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/cms/base.stl"/>
-        </geometry>
-        <material name="cms_base">
-          <color rgba="${100/255.0} ${100/255.0} ${100/255.0} 1" />
-        </material>
-      </visual>
-      <visual>
-        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/cms/cms1.stl"/>
-        </geometry>
-        <material name="cms_cms1">
-          <color rgba="${100/255.0} ${100/255.0} ${100/255.0} 1" />
-        </material>
-      </visual>
-      <visual>
-        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/cms/cms2.stl"/>
-        </geometry>
-        <material name="cms_cms2">
-          <color rgba="${200.0/255.0} ${200.0/255.0} ${200.0/255.0} 1" />
-        </material>
-      </visual>
-      <visual>
-        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/cms/cms3.stl"/>
-        </geometry>
-        <material name="cms_cms3">
-          <color rgba="${100/255.0} ${100/255.0} ${100/255.0} 1" />
-        </material>
-      </visual>
-      <collision>
-        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/cms/collision_up.stl"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/cms/collision_down.stl"/>
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="${cms_x} ${cms_y} ${cms_z}" rpy="0 0 ${cms_flipped_angle_rad}" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/cms/arm.stl"/>
-        </geometry>
-      </collision>
-
-      <visual>
         <origin xyz="0 0 ${table_height}" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/round_table.stl"/>
+          <mesh filename="file:///home/nizan/catkin_ws/src/gemmaD_robot_ros/gemmad_robot_description/stl/table/full_table.dae"/>
         </geometry>
-        <material name="table_color">
-          <color rgba="${200.0/255.0} ${200.0/255.0} ${200.0/255.0} 1" />
-        </material>
       </visual>
       <collision>
-        <origin xyz="0 0 ${table_height / 2.0}" rpy="0 0 ${pi / 2.0}" />
+        <origin xyz="0 0 ${table_height}" rpy="0 0 0" />
         <geometry>
-         <box size="0.14 0.5 ${table_height}" />
+          <mesh filename="file:///home/nizan/catkin_ws/src/gemmaD_robot_ros/gemmad_robot_description/stl/table/full_table.dae"/>
         </geometry>
       </collision>
     </link>
@@ -517,7 +444,7 @@
         <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/face_database/eliane/eliane_aligned_subdivision.dae"/>
+          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/face_database/full_body/full_body_with_chair.dae"/>
         </geometry>
       </visual>
       <collision>
@@ -536,7 +463,7 @@
     <joint name="face_joint" type="fixed">
     <parent link="${prefix}base_link"/>
     <child link="face_link"/>
-    <origin rpy="${pi / 2} 0 ${pi}" xyz="0 -0.55 0.45"/>
+    <origin rpy="${pi / 2} 0 ${pi}" xyz="${face_x} ${face_y} ${face_z}"/>
     </joint>
 
     <joint name="${prefix}table-base_link" type="fixed">
