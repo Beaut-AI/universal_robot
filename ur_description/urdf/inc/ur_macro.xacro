@@ -422,7 +422,7 @@
 
     <xacro:property name="table_height" value="0.77"/>
     <xacro:property name="face_x" value="0"/>
-    <xacro:property name="face_y" value="-0.55"/>
+    <xacro:property name="face_y" value="-0.70"/>
     <xacro:property name="face_z" value="0.45"/>
     
     <link name="${prefix}table">
