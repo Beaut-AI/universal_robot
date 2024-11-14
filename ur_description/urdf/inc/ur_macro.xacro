@@ -336,25 +336,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/temptu_airpod_airbrush.stl"/>
-        </geometry>
-        <material name="temptu_airpod_airbrush">
-          <color rgba="1 ${186.0/255.0} ${172.0/255.0} 1" />
-        </material>
-      </visual>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/temptu_airpod_camera.stl"/>
-        </geometry>
-        <material name="temptu_airpod_camera">
-          <color rgba="${20.0/255.0} ${20.0/255.0} ${240.0/255.0} 1" />
-        </material>
-      </visual>
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/temptu_airpod_gripper.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/HAX_maRC_V1/gripper.stl"/>
         </geometry>
         <material name="temptu_airpod_gripper">
           <color rgba="${100.0/255.0} ${100.0/255.0} ${100.0/255.0} 1" />
@@ -363,7 +345,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/temptu_airpod_collision.stl"/>
+          <mesh filename="package://gemmapp_ros/meshes/ee/HAX_maRC_V1/gripper.stl"/>
         </geometry>
       </collision>
     </link>
@@ -375,7 +357,7 @@
 
     <link name="${prefix}camera_ee" />
     <joint name="${prefix}tool_temp-camera_ee" type="fixed">
-      <origin xyz="0 -0.038 0.139" rpy="0 0 0"/>
+      <origin xyz="0.04 0.045 0.029" rpy="0 0 0"/>
       <parent link="${prefix}tool_temp"/>
       <child link="${prefix}camera_ee"/>
     </joint>
@@ -383,8 +365,8 @@
     <xacro:property name="calibration_x_angle" value="-0.0572047"/>
     <xacro:property name="calibration_y_angle" value="-0.0290007"/>
     <xacro:property name="x_shift" value="0.0"/>
-    <xacro:property name="y_shift" value="0.017"/>
-    <xacro:property name="z_shift" value="0.15578"/>
+    <xacro:property name="y_shift" value="0.0"/>
+    <xacro:property name="z_shift" value="0.097"/>
 
     <!-- Start: This setup are meant for 'air-brush' experiments -->
     <link name="${prefix}tool0" />
