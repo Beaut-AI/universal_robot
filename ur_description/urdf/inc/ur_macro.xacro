@@ -362,8 +362,8 @@
       <child link="${prefix}camera_ee"/>
     </joint>
 
-    <xacro:property name="calibration_x_angle" value="-0.0572047"/>
-    <xacro:property name="calibration_y_angle" value="-0.0290007"/>
+    <xacro:property name="calibration_x_angle" value="-0.0230358"/>
+    <xacro:property name="calibration_y_angle" value="-0.0370216"/>
     <xacro:property name="x_shift" value="0.0"/>
     <xacro:property name="y_shift" value="0.0"/>
     <xacro:property name="z_shift" value="0.097"/>
