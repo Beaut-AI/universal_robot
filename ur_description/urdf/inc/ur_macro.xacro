@@ -377,6 +377,13 @@
     </joint>
     <!-- End: This setup meant for 'air-brush' experiments -->
 
+    <link name="${prefix}laser_ee" />
+    <joint name="${prefix}tool_temp-laser_ee" type="fixed">
+      <origin xyz="0 0.014 0" rpy="0 0 0"/>
+      <parent link="${prefix}tool0"/>
+      <child link="${prefix}laser_ee"/>
+    </joint>
+
     <xacro:property name="table_height" value="0.77"/>
     <xacro:property name="face_x" value="0"/>
     <xacro:property name="face_y" value="-0.70"/>
