@@ -362,25 +362,43 @@
       <child link="${prefix}camera_ee"/>
     </joint>
 
-    <xacro:property name="calibration_x_angle" value="0.0"/>
-    <xacro:property name="calibration_y_angle" value="0.0"/> 
-    <xacro:property name="x_shift" value="0.0"/>
-    <xacro:property name="y_shift" value="0.0"/>
-    <xacro:property name="z_shift" value="0.1352"/>
+    <xacro:property name="airbrush_calib_x_angle" value="0.0"/>
+    <xacro:property name="airbrush_calib_y_angle" value="0.0"/> 
+    <xacro:property name="airbrush_calib_x_shift" value="0.0"/>
+    <xacro:property name="airbrush_calib_y_shift" value="0.0"/>
+    <xacro:property name="airbrush_calib_z_shift" value="0.0"/>
 
-    <!-- Start: This setup are meant for 'air-brush' experiments -->
-    <link name="${prefix}tool0" />
-    <joint name="${prefix}tool_temp-tool0" type="fixed">
-      <origin xyz="${x_shift} ${y_shift} ${z_shift}" rpy="${calibration_y_angle} ${calibration_x_angle} 0"/>
+    <link name="${prefix}tool0_no_calib" />
+    <joint name="${prefix}tool_temp-tool0_no_calib" type="fixed">
+      <origin xyz="0 0 0.1352" rpy="0 0 0"/>
       <parent link="${prefix}tool_temp"/>
+      <child link="${prefix}tool0_no_calib"/>
+    </joint>
+
+    <link name="${prefix}tool0" />
+    <joint name="${prefix}tool0_no_calib-tool0" type="fixed">
+      <origin xyz="${airbrush_calib_x_shift} ${airbrush_calib_y_shift} ${airbrush_calib_z_shift}" rpy="${airbrush_calib_y_angle} ${airbrush_calib_x_angle} 0"/>
+      <parent link="${prefix}tool0_no_calib"/>
       <child link="${prefix}tool0"/>
     </joint>
-    <!-- End: This setup meant for 'air-brush' experiments -->
+
+    <link name="${prefix}laser_no_calib_ee" />
+    <joint name="${prefix}tool0_no_calib-laser_no_calib_ee" type="fixed">
+      <origin xyz="0 0.014 0" rpy="0 0 0"/>
+      <parent link="${prefix}tool0_no_calib"/>
+      <child link="${prefix}laser_no_calib_ee"/>
+    </joint>
+
+    <xacro:property name="laser_calib_x_angle" value="0.0"/>
+    <xacro:property name="laser_calib_y_angle" value="0.0"/> 
+    <xacro:property name="laser_calib_x_shift" value="0.0"/>
+    <xacro:property name="laser_calib_y_shift" value="0.0"/>
+    <xacro:property name="laser_calib_z_shift" value="0.0"/>
 
     <link name="${prefix}laser_ee" />
-    <joint name="${prefix}tool_temp-laser_ee" type="fixed">
-      <origin xyz="0 0.014 0" rpy="0 0 0"/>
-      <parent link="${prefix}tool0"/>
+    <joint name="${prefix}laser_no_calib_ee-laser_ee" type="fixed">
+      <origin xyz="${laser_calib_x_shift} ${laser_calib_y_shift} ${laser_calib_z_shift}" rpy="${laser_calib_y_angle} ${laser_calib_x_angle} 0"/>
+      <parent link="${prefix}laser_no_calib_ee"/>
       <child link="${prefix}laser_ee"/>
     </joint>
 
