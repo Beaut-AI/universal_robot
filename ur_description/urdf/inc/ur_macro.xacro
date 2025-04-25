@@ -336,7 +336,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/HAX_Nick_V1/ee.stl"/>
+          <mesh filename="package://gemma_makeup/meshes/ee/HAX_Nick_V1/ee.stl"/>
         </geometry>
         <material name="temptu_airpod_gripper">
           <color rgba="${100.0/255.0} ${100.0/255.0} ${100.0/255.0} 1" />
@@ -345,7 +345,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/HAX_Nick_V1/ee.stl"/>
+          <mesh filename="package://gemma_makeup/meshes/ee/HAX_Nick_V1/ee.stl"/>
         </geometry>
       </collision>
     </link>
@@ -421,59 +421,6 @@
         </geometry>
       </collision>
     </link>
-
-    <!-- <link name="face_link">
-        <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/face_database/eliane/eliane_aligned.dae"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/face_database/eliane/eliane_aligned_collision.dae"/>
-        </geometry>
-      </collision>
-      <inertial>
-            <origin rpy="0 0 0" xyz="0.043 0.001 0.002" />
-            <mass value="0.1" />
-            <inertia ixx="0.000348958333333" ixy="0" ixz="0" iyy="0.000348958333333" iyz="0" izz="3.125e-05" />
-        </inertial>
-    </link> -->
-
-    <!-- <link name="bust_link">
-      <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/face_database/bust/bust_collision1.stl"/>
-      </geometry>
-      </collision>
-      <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/face_database/bust/bust_collision2.stl"/>
-      </geometry>
-      </collision>
-      <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-          <mesh filename="file:///home/nizan/catkin_ws/src/face_scanner_ros/face_database/bust/bust_collision3.stl"/>
-      </geometry>
-      </collision>
-    </link> -->
-
-    <!-- <joint name="face_joint" type="fixed">
-    <parent link="${prefix}base_link"/>
-    <child link="face_link"/>
-    <origin rpy="${pi / 2} 0 ${pi}" xyz="${face_x} ${face_y} ${face_z}"/>
-    </joint> -->
-
-    <!-- <joint name="bust_joint" type="fixed">
-        <parent link="face_link"/>
-        <child link="bust_link"/>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
-    </joint> -->
 
     <joint name="${prefix}table-base_link" type="fixed">
       <origin xyz="0 0 ${table_height}" rpy="0 0 0"/>
