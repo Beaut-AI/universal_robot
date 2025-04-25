@@ -336,7 +336,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/HAX_Nick_V1/ee.stl"/>
+          <mesh filename="package://gemma_makeup/meshes/ee/HAX_Nick_V1/ee.stl"/>
         </geometry>
         <material name="temptu_airpod_gripper">
           <color rgba="${100.0/255.0} ${100.0/255.0} ${100.0/255.0} 1" />
@@ -345,7 +345,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://gemmapp_ros/meshes/ee/HAX_Nick_V1/ee.stl"/>
+          <mesh filename="package://gemma_makeup/meshes/ee/HAX_Nick_V1/ee.stl"/>
         </geometry>
       </collision>
     </link>
