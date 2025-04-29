@@ -411,13 +411,13 @@
       <visual>
         <origin xyz="0 0 ${table_height}" rpy="0 0 0" />
         <geometry>
-          <mesh filename="$(find gemma_face_scanner)/face_database/table/full_table.dae"/>
+          <mesh filename="package://gemma_face_scanner/face_database/table/full_table.dae"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="0 0 ${table_height}" rpy="0 0 0" />
         <geometry>
-          <mesh filename="$(find gemma_face_scanner)/face_database/table/full_table.dae"/>
+          <mesh filename="package://gemma_face_scanner/face_database/table/full_table.dae"/>
         </geometry>
       </collision>
     </link>
