@@ -382,11 +382,11 @@
       <child link="${prefix}tool0"/>
     </joint>
 
-    <link name="${prefix}laser_no_calib_ee" />
-    <joint name="${prefix}tool0_no_calib-laser_no_calib_ee" type="fixed">
+    <link name="${prefix}laser_ee_no_calib" />
+    <joint name="${prefix}tool0_no_calib-laser_ee_no_calib" type="fixed">
       <origin xyz="0 0.014 0" rpy="0 0 0"/>
       <parent link="${prefix}tool0_no_calib"/>
-      <child link="${prefix}laser_no_calib_ee"/>
+      <child link="${prefix}laser_ee_no_calib"/>
     </joint>
 
     <xacro:property name="laser_calib_x_angle" value="0.0"/>
@@ -396,9 +396,9 @@
     <xacro:property name="laser_calib_z_shift" value="0.0"/>
 
     <link name="${prefix}laser_ee" />
-    <joint name="${prefix}laser_no_calib_ee-laser_ee" type="fixed">
+    <joint name="${prefix}laser_ee_no_calib-laser_ee" type="fixed">
       <origin xyz="${laser_calib_x_shift} ${laser_calib_y_shift} ${laser_calib_z_shift}" rpy="${laser_calib_y_angle} ${laser_calib_x_angle} 0"/>
-      <parent link="${prefix}laser_no_calib_ee"/>
+      <parent link="${prefix}laser_ee_no_calib"/>
       <child link="${prefix}laser_ee"/>
     </joint>
 
