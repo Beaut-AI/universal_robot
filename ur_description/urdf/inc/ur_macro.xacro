@@ -362,11 +362,11 @@
       <child link="${prefix}camera_ee"/>
     </joint>
 
-    <xacro:property name="airbrush_calib_x_angle" value="0.0"/>
-    <xacro:property name="airbrush_calib_y_angle" value="0.0"/> 
-    <xacro:property name="airbrush_calib_x_shift" value="0.0"/>
-    <xacro:property name="airbrush_calib_y_shift" value="0.0"/>
-    <xacro:property name="airbrush_calib_z_shift" value="0.0"/>
+	<xacro:property name="airbrush_calib_x_angle" value="-0.009598"/>
+	<xacro:property name="airbrush_calib_y_angle" value="-0.008347"/>
+	<xacro:property name="airbrush_calib_x_shift" value="0.001816"/>
+	<xacro:property name="airbrush_calib_y_shift" value="-0.005313"/>
+	<xacro:property name="airbrush_calib_z_shift" value="-0.006385"/>
 
     <link name="${prefix}tool0_no_calib" />
     <joint name="${prefix}tool_temp-tool0_no_calib" type="fixed">
@@ -377,7 +377,7 @@
 
     <link name="${prefix}tool0" />
     <joint name="${prefix}tool0_no_calib-tool0" type="fixed">
-      <origin xyz="${airbrush_calib_x_shift} ${airbrush_calib_y_shift} ${airbrush_calib_z_shift}" rpy="${airbrush_calib_y_angle} ${airbrush_calib_x_angle} 0"/>
+      <origin xyz="${-1.0 * airbrush_calib_x_shift} ${airbrush_calib_y_shift} ${airbrush_calib_z_shift}" rpy="${-1.0 * airbrush_calib_y_angle} ${-1.0 * airbrush_calib_x_angle} 0"/>
       <parent link="${prefix}tool0_no_calib"/>
       <child link="${prefix}tool0"/>
     </joint>
@@ -394,10 +394,10 @@
     <xacro:property name="laser_calib_x_shift" value="0.0"/>
     <xacro:property name="laser_calib_y_shift" value="0.0"/>
     <xacro:property name="laser_calib_z_shift" value="0.0"/>
-
+    
     <link name="${prefix}laser_ee" />
     <joint name="${prefix}laser_ee_no_calib-laser_ee" type="fixed">
-      <origin xyz="${laser_calib_x_shift} ${laser_calib_y_shift} ${laser_calib_z_shift}" rpy="${laser_calib_y_angle} ${laser_calib_x_angle} 0"/>
+      <origin xyz="${-1.0 * laser_calib_x_shift} ${laser_calib_y_shift} ${laser_calib_z_shift}" rpy="${-1.0 * laser_calib_y_angle} ${-1.0 * laser_calib_x_angle} 0"/>
       <parent link="${prefix}laser_ee_no_calib"/>
       <child link="${prefix}laser_ee"/>
     </joint>
