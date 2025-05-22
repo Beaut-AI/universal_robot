@@ -383,9 +383,9 @@
     </joint>
 
     <link name="${prefix}laser_ee_no_calib" />
-    <joint name="${prefix}tool0_no_calib-laser_ee_no_calib" type="fixed">
-      <origin xyz="0 0.014 0" rpy="0 0 0"/>
-      <parent link="${prefix}tool0_no_calib"/>
+    <joint name="${prefix}tool_temp-laser_ee_no_calib" type="fixed">
+      <origin xyz="0 -0.0665 0.112" rpy="0 0 0"/>
+      <parent link="${prefix}tool_temp"/>
       <child link="${prefix}laser_ee_no_calib"/>
     </joint>
 
