@@ -29,6 +29,14 @@
         <joint name="wrist_2_joint"         value="-1.5383" />
         <joint name="wrist_3_joint"         value="-0.2405" />
     </group_state>
+    <group_state name="paint_calib_position" group="manipulator">
+        <joint name="shoulder_pan_joint"    value="0.0174" />
+        <joint name="shoulder_lift_joint"   value="-2.088" />
+        <joint name="elbow_joint"           value="1.9488" />
+        <joint name="wrist_1_joint"         value="0.1914" />
+        <joint name="wrist_2_joint"         value="1.5834" />
+        <joint name="wrist_3_joint"         value="-3.1146" />
+    </group_state>
     <group_state name="forward_scan_position" group="manipulator">
         <joint name="shoulder_pan_joint"    value="1.229" />
         <joint name="shoulder_lift_joint"   value="-1.759" />
